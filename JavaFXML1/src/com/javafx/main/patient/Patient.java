@@ -16,9 +16,11 @@ public class Patient {
    private final SimpleStringProperty doctor;
    private final SimpleStringProperty medID;
    private final SimpleStringProperty history;
+   private final SimpleStringProperty lastVisit;
    
 
-        public Patient(String fName, String lName, String doc, String id, String hist) {
+        public Patient(String fName, String lName, String doc, String id, String lVisit, String hist) {
+            this.lastVisit = new SimpleStringProperty(lVisit);
             this.firstName = new SimpleStringProperty(fName);
             this.lastName = new SimpleStringProperty(lName);
             this.history = new SimpleStringProperty(hist);
@@ -46,6 +48,13 @@ public class Patient {
            public void setMedID(String id) {
             medID.set(id);
         }
+           
+        public String getLastVisit() {
+            return lastVisit.get();
+        }
+        public void setLastVisit(String lVisit) {
+            lastVisit.set(lVisit);
+        }  
         
         public String getDoctor() {
             return doctor.get();
